@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Styles/style.css">
+    <link rel="shortcut icon" href="./Icons/head_notes_icon.png">
+    <title>Task Manager</title>
+</head>
+
+<body>
+    <main>
+        <div class="logo">
+            <h1>Task Manager</h1>
+            <img src="./Icons/notes_icon.png" alt="logo" width="75px" height="75px">
+        </div>
+        <div class="container">
+            <div class="todo chapter">
+                <h2 style="color: #ff0000;">Todo</h2>
+                <div class="unshift-here">
+                    <!-- <div class="todo-task">
+                        <h2>Заголовок</h2>
+                        <br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, quae.</p>
+                        <div class="status">
+                            <div class="arrow-left">&lt;</div>
+                            <div class="arrow-right">&gt;</div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="inprogress chapter">
+                <h2 style="color: rgb(255, 255, 0);">Inprogress</h2>
+                <div class="unshift-here"></div>
+            </div>
+            <div class="done chapter">
+                <h2 style="color: green;">Done</h2>
+                <div class="unshift-here"></div>
+            </div>
+        </div>
+    </main>
+    <div class="button-add">New task</div>
+
+    <!-- Modal -->
+    <div class="modal-background">
+        <span>&times;</span>
+    </div>
+    <div class="modal-window">
+        <i>
+            <h2>New Task</h2>
+        </i>
+        <form name="Todo">
+            <input required placeholder="Please write a title" type="text" name="title">
+            <textarea required placeholder="Please write a description" name="description"></textarea>
+            <button class="add">Add</button>
+        </form>
+    </div>
+
+
+    <script src="./JS/script.js"></script>
+    <script src="./JS/modal.js"></script>
+</body>
+
+</html>

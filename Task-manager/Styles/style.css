@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Fira Sans Condensed', sans-serif;
+}
+
+main {
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    padding: 15px;
+}
+
+.logo {
+    margin: 0 auto;
+    width: 400px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.logo h1 {
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 50px;
+}
+
+.container {
+    margin: 0 auto;
+    width: fit-content;
+    height: auto;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chapter {
+    width: 400px;
+    height: 550px;
+    background-color: rgb(215, 215, 215);
+    text-align: center;
+    padding-top: 10px;
+    border-radius: 15px;
+    border: 1px solid rgb(192, 192, 192);
+}
+
+.unshift-here {
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 95%;
+    height: 85%;
+    overflow-y: scroll;
+}
+
+.todo-task {
+    margin: 0 auto;
+    width: 90%;
+    height: auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.status {
+    margin: 0 auto;
+    margin-top: 15px;
+    width: 120px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.arrow-left,
+.arrow-right {
+    width: 50px;
+    height: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    border: 1px solid blue;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.arrow-left:hover,
+.arrow-right:hover {
+    background-color: blue;
+    color: white;
+}
+
+.button-add {
+    width: fit-content;
+    height: 50px;
+    border-radius: 25%;
+    background-color: blue;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    transition: .3s ease;
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.button-add:hover {
+    box-shadow: 0px 0px 5px 5px rgb(0, 85, 255);
+}
+
+.modal-background {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    backdrop-filter: blur(15px);
+    z-index: 998;
+    opacity: 0;
+    display: none;
+    top: 0px;
+    left: 0px;
+    transition: 1s ease;
+}
+
+.modal-background span {
+    font-size: 100px;
+    position: fixed;
+    top: 0px;
+    right: 20px;
+    transition: none;
+    cursor: pointer;
+}
+
+
+.modal-window {
+    position: fixed;
+    top: -100%;
+    left: 50%;
+    width: 400px;
+    height: 300px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    overflow: hidden;
+    transition: .5s ease;
+    opacity: 0;
+}
+
+.modal-window h2 {
+    font-size: 25px;
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.show {
+    top: 50%;
+    opacity: 1;
+}
+
+.modal-window input {
+    position: absolute;
+    transform: translate(-50%);
+    top: 15%;
+    left: 50%;
+    width: 70%;
+    height: 45px;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: rgb(213, 213, 213);
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.modal-window input::placeholder {
+    font-size: 16px;
+}
+
+.modal-window textarea {
+    width: 70%;
+    height: 100px;
+    position: absolute;
+    top: 110px;
+    left: 50%;
+    transform: translate(-50%);
+    resize: none;
+    outline: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 17px;
+}
+
+.modal-window textarea::placeholder {
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Fira Sans Condensed', sans-serif;
+}
+
+.modal-window .add {
+    /* display: block; */
+    width: 30%;
+    height: 40px;
+    position: absolute;
+    left: 50%;
+    bottom: 25px;
+    transform: translate(-50%);
+    border: none;
+    background-color: green;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 17px;
+    transition: .3s ease;
+    cursor: pointer;
+}
+
+.modal-window .add:hover {
+    box-shadow: 0px 0px 5px 5px rgb(26, 255, 0);
+}
