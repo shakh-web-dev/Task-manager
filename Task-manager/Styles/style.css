@@ -35,6 +35,11 @@ main {
     font-size: 50px;
 }
 
+.logo img {
+    width: 75px;
+    height: 75px;
+}
+
 .container {
     margin: 0 auto;
     width: fit-content;
@@ -42,7 +47,6 @@ main {
     display: flex;
     gap: 10px;
     align-items: center;
-    justify-content: space-between;
 }
 
 .chapter {
@@ -53,6 +57,12 @@ main {
     padding-top: 10px;
     border-radius: 15px;
     border: 1px solid rgb(192, 192, 192);
+}
+
+.chapter h2 {
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 10px;
 }
 
 .unshift-here {
@@ -85,6 +95,9 @@ main {
 
 .arrow-left,
 .arrow-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 50px;
     height: 20px;
     font-size: 20px;
@@ -95,6 +108,16 @@ main {
     transition: .3s ease;
 }
 
+.arrow-top {
+    rotate: 150deg;
+}
+
+
+.arrow-bottom {
+    rotate: -150deg;
+}
+
+
 .arrow-left:hover,
 .arrow-right:hover {
     background-color: blue;
@@ -102,13 +125,14 @@ main {
 }
 
 .button-add {
-    width: fit-content;
+    width: 100px;
     height: 50px;
     border-radius: 25%;
     background-color: blue;
     color: white;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 5px;
     transition: .3s ease;
     position: fixed;
@@ -118,13 +142,17 @@ main {
     z-index: 1000;
 }
 
+.button-add img {
+    display: none;
+}
+
 .button-add:hover {
     box-shadow: 0px 0px 5px 5px rgb(0, 85, 255);
 }
 
 .modal-background {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     position: fixed;
     backdrop-filter: blur(15px);
     z-index: 998;
@@ -152,6 +180,7 @@ main {
     width: 400px;
     height: 300px;
     background-color: white;
+    border: 1px solid gray;
     border-radius: 10px;
     padding: 10px;
     transform: translate(-50%, -50%);

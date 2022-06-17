@@ -1,0 +1,236 @@
+@media screen and (max-width: 1225px) {
+    .logo {
+        width: 300px;
+    }
+
+    .logo h1 {
+        font-size: 40px;
+    }
+
+    .logo img {
+        width: 60px;
+        height: 65px;
+    }
+
+    .chapter {
+        width: 350px;
+        height: 500px;
+    }
+
+    .chapter h2 {
+        font-size: 30px;
+    }
+
+    .todo-task {
+        width: 96%;
+    }
+
+    .arrow-left:active,
+    .arrow-right:active {
+        background-color: blue;
+        color: white;
+    }
+
+    .button-add {
+        width: 120px;
+        height: 60px;
+        font-size: 20px;
+        transition: .1s ease;
+    }
+
+    .button-add:hover {
+        box-shadow: none;
+    }
+
+    .button-add:active {
+        background-color: rgb(0, 106, 255);
+    }
+
+    /*Modal  */
+
+    .modal-background {
+        backdrop-filter: blur(20px);
+    }
+
+    .modal-background span {
+        font-size: 90px;
+    }
+
+    .modal-window {
+        width: 450px;
+        height: 350px;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid gray;
+    }
+
+    .modal-window h2 {
+        font-size: 32px;
+    }
+
+    .modal-window input {
+        width: 80%;
+        font-size: 20px;
+    }
+
+    .modal-window input::placeholder {
+        font-size: 18px;
+    }
+
+    .modal-window textarea {
+        width: 80%;
+        height: 120px;
+        font-size: 19px;
+    }
+
+    .modal-window textarea::placeholder {
+        font-size: 18px;
+    }
+
+    .modal-window .add {
+        width: 35%;
+        height: 50px;
+        font-size: 19px;
+    }
+
+    .modal-window .add:active {
+        background-color: rgb(0, 210, 0);
+    }
+
+    .modal-window .add:hover {
+        box-shadow: none;
+    }
+
+
+}
+
+@media screen and (max-width: 1095px) {
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .chapter {
+        background-color: rgb(60, 60, 60);
+    }
+
+    .chapter h2 {
+        box-shadow: 0px 0px 10px 10px;
+        border-radius: 15%;
+        padding: 5px;
+    }
+
+    .todo-task {
+        margin-bottom: 10px;
+    }
+
+    .todo-task h3 {
+        font-size: 30px;
+    }
+
+    .todo-task p {
+        font-size: 23px;
+    }
+
+    .status {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 130px;
+    }
+
+    .arrow-left,
+    .arrow-right {
+        width: 60px;
+        height: 30px;
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .button-add {
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+        padding: 5px;
+    }
+
+    .button-add p {
+        display: none;
+    }
+
+    .button-add img {
+        display: block;
+        filter: invert(100%);
+    }
+
+    /* Modal */
+
+    .modal-background {
+        backdrop-filter: blur(100px);
+    }
+
+    .modal-window {
+        width: 400px;
+        height: 325px;
+        background-color: black;
+    }
+
+    .modal-window h2 {
+        color: white;
+    }
+
+    .modal-window input {
+        box-shadow: 0px 0px 5px 5px gray;
+    }
+
+    .modal-window textarea {
+        box-shadow: 0px 0px 5px 5px green;
+    }
+
+    .status {
+        width: 100px;
+    }
+
+    .arrow-left, .arrow-right {
+        width: 40px;
+        height: 45px;
+        transform: rotate(90deg);
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .container {
+        gap: 20px;
+    }
+
+    .chapter {
+        box-shadow: 0px 0px 3px 3px gray;
+    }
+
+
+    .modal-window {
+        width: 350px;
+        height: 350px;
+    }
+
+    .modal-window textarea {
+        height: 150px;
+    }
+
+    .modal-background span {
+        display: none;
+    }
+
+    .button-add {
+        right: 10px;
+        bottom: 10px;
+        width: 45px;
+        height: 45px;
+    }
+
+    .button-add img {
+        width: 30px;
+        height: 30px;
+    }
+}

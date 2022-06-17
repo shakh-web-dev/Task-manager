@@ -1,15 +1,33 @@
 let todos = [
     {
         id: Math.random(),
-        description: 'Купить продукты',
-        title: 'Хлеб, молоко, мясо',
+        title: 'Купить продукты',
+        description: 'Хлеб, молоко, мясо',
         position: 1
     },
     {
         id: Math.random(),
-        description: 'asdsad',
-        title: 'asdasd, asdas d, asdasdsddasd',
+        title: 'asdsad',
+        description: 'asdasd, asdas d, asdasdsddasd',
+        position: 1
+    },
+    {
+        id: Math.random(),
+        title: 'Посмотреть фильмы и сериалы',
+        description: 'Человек паук: Нет пути домой, Соник 2, Доктор Стрендж 2: Мультивселенная безумия',
         position: 2
+    },
+    {
+        id: Math.random(),
+        title: 'Добавить адаптация в этот сайт',
+        description: 'Всё работает отлично👍',
+        position: 3
+    },
+    {
+        id: Math.random(),
+        title: 'Хостинг',
+        description: 'Залить в гитхаб и нетлифай',
+        position: 3
     }
 ]
 
@@ -52,7 +70,7 @@ const CreateElement = (arr) => {
     for (let item of arr) {
 
         let div = document.createElement('div')
-        let h2 = document.createElement('h2')
+        let h3 = document.createElement('h3')
         let br = document.createElement('br')
         let p = document.createElement('p')
         let div2 = document.createElement('div')
@@ -65,7 +83,8 @@ const CreateElement = (arr) => {
         rightArrow.classList.add('arrow-right')
         div.setAttribute('id', item.id)
 
-        h2.innerHTML = item.title
+
+        h3.innerHTML = item.title
         p.innerHTML = item.description
         leftArrow.innerHTML = `&lt;`
         rightArrow.innerHTML = `&gt;`
@@ -73,15 +92,11 @@ const CreateElement = (arr) => {
 
 
         div2.append(leftArrow, rightArrow)
-        div.append(h2, br, p, div2)
+        div.append(h3, br, p, div2)
         todo.append(div)
         console.log(div);
 
-
-        rightArrow.onclick = () => {
-            item.position++
-            console.log(item.position);
-
+        function sort() {
             if (item.position == 4) {
                 item.position = 1
                 console.log(item.position);
@@ -94,25 +109,23 @@ const CreateElement = (arr) => {
             } else {
                 done.append(div)
             }
+        }
+
+        rightArrow.onclick = () => {
+            item.position++
+            div.setAttribute('position', item.position)
+            console.log(item.position);
+            sort()
 
         }
 
         leftArrow.onclick = () => {
             item.position--
+            div.setAttribute('position', item.position)
             console.log(item.position);
-            if (item.position == 0) {
-                item.position = 3
-                console.log(item.position);
-            }
-
-            if (item.position == 1) {
-                todo.prepend(div)
-            } else if (item.position == 2) {
-                inProgress.append(div)
-            } else {
-                done.append(div)
-            }
+            sort()
         }
+        sort()
     }
 
 }
