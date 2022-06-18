@@ -28,7 +28,7 @@ closeBtn.onclick = () => {
     setTimeout(() => {
         bg_modal.style.display = "none"
     }, 500);
-    body.style.overflowX = "scroll"
+    body.style.overflow = "scroll"
 }
 
 bg_modal.onclick = () => {
@@ -37,19 +37,33 @@ bg_modal.onclick = () => {
     setTimeout(() => {
         bg_modal.style.display = "none"
     }, 500);
-    body.style.overflowX = "scroll"
+    body.style.overflow = "scroll"
 }
 
 addBtn.onclick = () => {
-    if (input.value || textarea.value) {
+    if (input.value && textarea.value) {
         modal.classList.remove('show')
         bg_modal.style.opacity = "0"
         setTimeout(() => {
             bg_modal.style.display = "none"
         }, 500);
-        body.style.overflowX = "scroll"
+        body.style.overflow = "scroll"
+    } else {
+        (input && textarea).style.boxShadow = '0px 0px 2.5px 2.5px red'
     }
-    else {
-        return
+}
+
+input.onkeyup = () => {
+    if (input.value) {
+        input.style.boxShadow = '0px 0px 2.5px 2.5px green'
+    } else {
+        input.style.boxShadow = '0px 0px 2.5px 2.5px red'
+    }
+}
+textarea.onkeyup = () => {
+    if (textarea.value) {
+        textarea.style.boxShadow = '0px 0px 2.5px 2.5px green'
+    } else {
+        textarea.style.boxShadow = '0px 0px 2.5px 2.5px red'
     }
 }

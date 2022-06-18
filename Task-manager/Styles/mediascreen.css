@@ -99,8 +99,6 @@
     .modal-window .add:hover {
         box-shadow: none;
     }
-
-
 }
 
 @media screen and (max-width: 1095px) {
@@ -135,7 +133,12 @@
     .status {
         margin-top: 20px;
         margin-bottom: 20px;
-        width: 130px;
+        width: 170px;
+    }
+
+    .status #delete {
+        width: 40px;
+        height: 40px;
     }
 
     .arrow-left,
@@ -184,14 +187,20 @@
     }
 
     .modal-window textarea {
-        box-shadow: 0px 0px 5px 5px green;
+        box-shadow: 0px 0px 5px 5px gray;
     }
 
     .status {
-        width: 100px;
+        width: 140px;
     }
 
-    .arrow-left, .arrow-right {
+    .status #delete {
+        width: 40px;
+        height: 40px;
+    }
+
+    .arrow-left,
+    .arrow-right {
         width: 40px;
         height: 45px;
         transform: rotate(90deg);
@@ -207,7 +216,6 @@
     .chapter {
         box-shadow: 0px 0px 3px 3px gray;
     }
-
 
     .modal-window {
         width: 350px;

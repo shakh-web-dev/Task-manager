@@ -7,8 +7,8 @@ let todos = [
     },
     {
         id: Math.random(),
-        title: 'asdsad',
-        description: 'asdasd, asdas d, asdasdsddasd',
+        title: 'Создать этот сайт',
+        description: 'Исправить ошибку',
         position: 1
     },
     {
@@ -19,7 +19,13 @@ let todos = [
     },
     {
         id: Math.random(),
-        title: 'Добавить адаптация в этот сайт',
+        title: 'Проверка этого сайта',
+        description: 'Исправить баг с скроллом',
+        position: 3
+    },
+    {
+        id: Math.random(),
+        title: 'Добавить адаптацию в этот сайт',
         description: 'Всё работает отлично👍',
         position: 3
     },
@@ -76,25 +82,24 @@ const CreateElement = (arr) => {
         let div2 = document.createElement('div')
         let leftArrow = document.createElement('div')
         let rightArrow = document.createElement('div')
+        let deleteBtn = document.createElement('div')
 
         div.classList.add('todo-task')
         div2.classList.add('status')
         leftArrow.classList.add('arrow-left')
         rightArrow.classList.add('arrow-right')
+        deleteBtn.setAttribute('id', 'delete')
         div.setAttribute('id', item.id)
-
 
         h3.innerHTML = item.title
         p.innerHTML = item.description
         leftArrow.innerHTML = `&lt;`
         rightArrow.innerHTML = `&gt;`
 
-
-
-        div2.append(leftArrow, rightArrow)
+        div2.append(leftArrow, rightArrow, deleteBtn)
         div.append(h3, br, p, div2)
         todo.append(div)
-        console.log(div);
+        // console.log(div);
 
         function sort() {
             if (item.position == 4) {
@@ -124,6 +129,15 @@ const CreateElement = (arr) => {
             div.setAttribute('position', item.position)
             console.log(item.position);
             sort()
+        }
+        
+        deleteBtn.onclick = () => {
+            Delete(item.id)
+            sort()
+        }
+
+        function Delete(id) {
+            todos.filter(item => item.id !== id)
         }
         sort()
     }
