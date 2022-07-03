@@ -20,7 +20,7 @@ let todos = [
     {
         id: Math.random(),
         title: 'Проверка этого сайта',
-        description: 'Исправить баг с скроллом',
+        description: 'Исправить баг с скроллом, исправить баг с модальной окной удаления',
         position: 3
     },
     {
@@ -34,13 +34,21 @@ let todos = [
         title: 'Хостинг',
         description: 'Залить в гитхаб и нетлифай',
         position: 3
+    },
+    {
+        id: Math.random(),
+        title: '321321321',
+        description: 'asdasdasdasd',
+        position: 2
     }
 ]
 
-//Логика
+// Добавление в localStorage
+localStorage.setItem("todos", JSON.stringify(todos))
+let todosInLocalSt = JSON.parse(localStorage.todos)
 
+// Добавление новых тасков
 let form = document.forms.Todo
-
 
 form.onsubmit = (event) => {
     event.preventDefault()
@@ -60,21 +68,22 @@ form.onsubmit = (event) => {
     CreateElement(todos)
 }
 
+// Отрисовка
 let todo = document.querySelector('.todo .unshift-here')
 let inProgress = document.querySelector('.inprogress .unshift-here')
 let done = document.querySelector('.done .unshift-here')
+let yes = document.querySelector('.choise div:nth-child(1)')
 
-console.log(todo);
-console.log(inProgress);
-console.log(done);
+// console.log(todo);
+// console.log(inProgress);
+// console.log(done);
 
 
-const CreateElement = (arr) => {
+const CreateElement = (todosInLocalSt) => {
     todo.innerHTML = ""
     inProgress.innerHTML = ""
     done.innerHTML = ""
-    for (let item of arr) {
-
+    for (let item of todosInLocalSt) {
         let div = document.createElement('div')
         let h3 = document.createElement('h3')
         let br = document.createElement('br')
@@ -88,7 +97,7 @@ const CreateElement = (arr) => {
         div2.classList.add('status')
         leftArrow.classList.add('arrow-left')
         rightArrow.classList.add('arrow-right')
-        deleteBtn.setAttribute('id', 'delete')
+        deleteBtn.classList.add('delete')
         div.setAttribute('id', item.id)
 
         h3.innerHTML = item.title
@@ -101,12 +110,12 @@ const CreateElement = (arr) => {
         todo.append(div)
         // console.log(div);
 
+        // 
         function sort() {
             if (item.position == 4) {
                 item.position = 1
                 console.log(item.position);
             }
-
             if (item.position == 1) {
                 todo.prepend(div)
             } else if (item.position == 2) {
@@ -116,12 +125,20 @@ const CreateElement = (arr) => {
             }
         }
 
+        function noActive() {
+            modalDelete.classList.remove('show')
+            bg_modal.style.opacity = "0"
+            setTimeout(() => {
+                bg_modal.style.display = "none"
+            }, 500);
+            body.style.overflowY = "scroll"
+        }
+
         rightArrow.onclick = () => {
             item.position++
             div.setAttribute('position', item.position)
             console.log(item.position);
             sort()
-
         }
 
         leftArrow.onclick = () => {
@@ -131,16 +148,21 @@ const CreateElement = (arr) => {
             sort()
         }
         
-        deleteBtn.onclick = () => {
+        yes.onclick = () => {
+            noActive()
             Delete(item.id)
-            sort()
+            console.log(todos);
+            console.log(JSON.parse(localStorage.todos), 'local');
+            CreateElement(todos)
         }
 
+        // Удаление элементов
         function Delete(id) {
-            todos.filter(item => item.id !== id)
+            todos = todos.filter(item => item.id !== id)
+            
         }
         sort()
     }
-
 }
 CreateElement(todos)
+console.log(todos, JSON.parse(localStorage.todos));

@@ -7,37 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Styles/style.css">
     <link rel="stylesheet" href="./Styles/mediascreen.css">
-    <link rel="shortcut icon" href="./Icons/head_notes_icon.png">
+    <link rel="shortcut icon" href="./Icons/favicon.ico">
+    <link rel="favicon" href="./Icons/favicon.ico">
     <title>Task Manager</title>
 </head>
 
 <body>
     <main>
         <div class="logo">
-            <h1>Task Manager</h1>
+            <h1>Notes to do</h1>
             <img src="./Icons/notes_icon.png" alt="logo">
         </div>
+        <p style="color: red; text-align:center; font-size: 20px;">!! Тестируется удаление !!
+        <br>проверять не советуюется т.к не правильно работает(<br><span style="color: green;">так что ждите обновлений :)</span></p><br>
         <div class="container">
             <div class="todo chapter">
-                <h2 style="color: #ff0000;">Todo</h2>
-                <div class="unshift-here">
-                    <!-- <div class="todo-task">
-                        <h2>Заголовок</h2>
-                        <br>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, quae.</p>
-                        <div class="status">
-                            <div class="arrow-left">&lt;</div>
-                            <div class="arrow-right">&gt;</div>
-                        </div>
-                    </div> -->
-                </div>
+                <h2 style="background-color: #ff0000;">To do</h2>
+                <div class="unshift-here"></div>
             </div>
             <div class="inprogress chapter">
-                <h2 style="color: rgb(255, 255, 0);">Inprogress</h2>
+                <h2 style="background-color: rgb(255, 255, 0);">In progress</h2>
                 <div class="unshift-here"></div>
             </div>
             <div class="done chapter">
-                <h2 style="color: #00ff00;">Done</h2>
+                <h2 style="background-color: #00ff00;">Done</h2>
                 <div class="unshift-here"></div>
             </div>
         </div>
@@ -62,16 +55,20 @@
         </form>
     </div>
     <div class="modal-delete">
-        <h3>Вelete this note?</h3>
+        <h1><span style="color: red;">Delete</span> this note?</h1>
         <div class="choise">
-            <div>Yes</div>
-            <div>No</div>
+            <div style="background-color: red;">Yes</div>
+            <div style="background-color: green;">No</div>
         </div>
     </div>
+    <footer>
+        <p>Notes to do v1.3</p>
+        <a href="https://www.instagram.com/_diamond_.1603/">developer's instagram <img src="./Icons/instagram_icon.png" alt="instagram" width="30px" height="30px"></a>
+        <a href="https://www.github.com/shakhriyor4ik/">developer's GitHub <img src="./Icons/github_icon.png" alt="github" width="30px" height="30px"></a>
+    </footer>
 
-
-    <script src="./JS/script.js"></script>
-    <script src="./JS/modal.js"></script>
+    <script type="module" src="./JS/script.js"></script>
+    <script type="module" src="./JS/modal.js"></script>
 </body>
 
 </html>
