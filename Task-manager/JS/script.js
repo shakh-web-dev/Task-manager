@@ -64,6 +64,7 @@ form.onsubmit = (event) => {
     })
 
     todos.push(obj)
+    localStorage.setItem()
 
     CreateElement(todos)
 }
@@ -125,15 +126,6 @@ const CreateElement = (todosInLocalSt) => {
             }
         }
 
-        function noActive() {
-            modalDelete.classList.remove('show')
-            bg_modal.style.opacity = "0"
-            setTimeout(() => {
-                bg_modal.style.display = "none"
-            }, 500);
-            body.style.overflowY = "scroll"
-        }
-
         rightArrow.onclick = () => {
             item.position++
             div.setAttribute('position', item.position)
@@ -149,7 +141,6 @@ const CreateElement = (todosInLocalSt) => {
         }
         
         yes.onclick = () => {
-            noActive()
             Delete(item.id)
             console.log(todos);
             console.log(JSON.parse(localStorage.todos), 'local');
