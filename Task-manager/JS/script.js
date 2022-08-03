@@ -1,3 +1,5 @@
+import { modalDelete, body, bg_modal } from "./modal.js"
+
 let todos = [
     {
         id: Math.random(),
@@ -55,6 +57,8 @@ form.onsubmit = (event) => {
 
     let obj = {
         id: Math.random(),
+        title: String,
+        description: String,
         position: 1
     }
     let fm = new FormData(form)
@@ -64,7 +68,7 @@ form.onsubmit = (event) => {
     })
 
     todos.push(obj)
-    localStorage.setItem()
+    // localStorage.setItem()
 
     CreateElement(todos)
 }
@@ -73,18 +77,18 @@ form.onsubmit = (event) => {
 let todo = document.querySelector('.todo .unshift-here')
 let inProgress = document.querySelector('.inprogress .unshift-here')
 let done = document.querySelector('.done .unshift-here')
-let yes = document.querySelector('.choise div:nth-child(1)')
+// let yes = document.querySelector('.choise div:nth-child(1)')
 
 // console.log(todo);
 // console.log(inProgress);
 // console.log(done);
 
 
-const CreateElement = (todosInLocalSt) => {
+const CreateElement = (arr) => {
     todo.innerHTML = ""
     inProgress.innerHTML = ""
     done.innerHTML = ""
-    for (let item of todosInLocalSt) {
+    for (let item of arr) {
         let div = document.createElement('div')
         let h3 = document.createElement('h3')
         let br = document.createElement('br')
@@ -111,7 +115,7 @@ const CreateElement = (todosInLocalSt) => {
         todo.append(div)
         // console.log(div);
 
-        // 
+        // Сортировака по позициям
         function sort() {
             if (item.position == 4) {
                 item.position = 1
@@ -139,21 +143,69 @@ const CreateElement = (todosInLocalSt) => {
             console.log(item.position);
             sort()
         }
-        
-        yes.onclick = () => {
-            Delete(item.id)
-            console.log(todos);
-            console.log(JSON.parse(localStorage.todos), 'local');
-            CreateElement(todos)
+
+        // Ошибка,
+        // yes.onclick = () => {
+        //     Delete(item.id)
+        //     CreateElement(todos)
+        // }
+
+        // Правильно
+        deleteBtn.onclick = () => {
+            OpenDeleteModal(item.id)
         }
 
-        // Удаление элементов
-        function Delete(id) {
-            todos = todos.filter(item => item.id !== id)
-            
+        function OpenDeleteModal(item_id) {
+            // Копирую окно т.к оригинал трогать не будем
+            let newModal = modalDelete.cloneNode(true)
+            body.appendChild(newModal)
+
+            // Показываем
+            show(newModal)
+
+            // Кнопки выбора
+            let btnYes = document.querySelector(".choise div:nth-child(1)")
+            let btnNo = document.querySelector(".choise div:nth-child(2)")
+
+            btnYes.onclick = () => {
+                Delete(item_id)
+                CreateElement(todos)
+                close(newModal)
+                console.log(todos);
+            }
+
+            btnNo.onclick = () => {
+                close(newModal)
+            }
+
+            function show(elem) {
+                elem.classList.add("show")
+                bg_modal.style.display = "block"
+                setTimeout(() => {
+                    bg_modal.style.transition = "none"
+                }, 500)
+                body.style.overflow = "hidden"
+                setTimeout(() => {
+                    bg_modal.style.opacity = "1"
+                }, 100)
+            }
+
+            function close(elem) {
+                elem.classList.remove("show")
+                bg_modal.style.opacity = "0"
+                setTimeout(() => {
+                    bg_modal.style.display = "none"
+                    elem.remove()
+                }, 500)
+                body.style.overflowY = "scroll"
+            }
+
+            // Удаление элементов
+            function Delete(id) {
+                todos = todos.filter(item => item.id !== id)
+            }
         }
         sort()
     }
 }
 CreateElement(todos)
-console.log(todos, JSON.parse(localStorage.todos));

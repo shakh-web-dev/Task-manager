@@ -1,6 +1,6 @@
 @media screen and (max-width: 1225px) {
     .logo {
-        width: 300px;
+        width: fit-content;
     }
 
     .logo h1 {
@@ -209,6 +209,14 @@
 }
 
 @media screen and (max-width: 740px) {
+    .logo {
+        width: fit-content;
+    }
+
+    .logo h1 {
+        font-size: 40px;
+    }
+
     .button-add {
         width: 60px;
         height: 60px;
@@ -275,6 +283,14 @@
 }
 
 @media screen and (max-width: 400px) {
+    .logo {
+        width: fit-content;
+    }
+
+    .logo h1 {
+        font-size: 40px;
+    }
+
     .container {
         gap: 20px;
     }
