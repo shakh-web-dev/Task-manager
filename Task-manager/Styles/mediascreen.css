@@ -228,9 +228,11 @@
         display: none;
     }
 
-    .button-add img {
-        display: block;
+    .button-add-img {
+        width: 25px;
+        height: 25px;
         filter: invert(100%);
+        background: url(../Icons/plus_icon.png) no-repeat center;
     }
 
     /* Modal */
@@ -302,10 +304,6 @@
 
     .modal-window textarea {
         height: 150px;
-    }
-
-    .modal-background span {
-        display: none;
     }
 
     .button-add {

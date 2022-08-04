@@ -1,4 +1,5 @@
-import { modalDelete, body, bg_modal } from "./modal.js"
+import { modalDelete, body, bg_modal, noActive } from "./modal.js"
+console.log(modalDelete);
 
 let todos = [
     {
@@ -45,9 +46,9 @@ let todos = [
     }
 ]
 
-// Добавление в localStorage
-localStorage.setItem("todos", JSON.stringify(todos))
-let todosInLocalSt = JSON.parse(localStorage.todos)
+// // Добавление в localStorage (Надо доработать)
+// window.localStorage.setItem("todos", JSON.stringify(todos))
+// let todosInLocalSt = JSON.parse(window.localStorage.todos)
 
 // Добавление новых тасков
 let form = document.forms.Todo
@@ -68,7 +69,12 @@ form.onsubmit = (event) => {
     })
 
     todos.push(obj)
-    // localStorage.setItem()
+
+    // Отправка таска в массив которая localStorage
+    // let localTask = JSON.stringify(todos)
+    // window.localStorage.setItem("todos", localTask)
+
+    console.log(todos);
 
     CreateElement(todos)
 }
@@ -84,11 +90,11 @@ let done = document.querySelector('.done .unshift-here')
 // console.log(done);
 
 
-const CreateElement = (arr) => {
+const CreateElement = (todos) => {
     todo.innerHTML = ""
     inProgress.innerHTML = ""
     done.innerHTML = ""
-    for (let item of arr) {
+    for (let item of todos) {
         let div = document.createElement('div')
         let h3 = document.createElement('h3')
         let br = document.createElement('br')
@@ -164,8 +170,8 @@ const CreateElement = (arr) => {
             show(newModal)
 
             // Кнопки выбора
-            let btnYes = document.querySelector(".choise div:nth-child(1)")
-            let btnNo = document.querySelector(".choise div:nth-child(2)")
+            let btnYes = newModal.querySelector(".choise div:nth-child(1)")
+            let btnNo = newModal.querySelector(".choise div:nth-child(2)")
 
             btnYes.onclick = () => {
                 Delete(item_id)
@@ -174,12 +180,17 @@ const CreateElement = (arr) => {
                 console.log(todos);
             }
 
-            btnNo.onclick = () => {
+            btnNo.onclick = () => close(newModal)
+
+            bg_modal.onclick = () => {
                 close(newModal)
+                noActive()
             }
 
             function show(elem) {
-                elem.classList.add("show")
+                setTimeout(() => {
+                    elem.classList.add("show")
+                }, 50)
                 bg_modal.style.display = "block"
                 setTimeout(() => {
                     bg_modal.style.transition = "none"
@@ -192,11 +203,12 @@ const CreateElement = (arr) => {
 
             function close(elem) {
                 elem.classList.remove("show")
-                bg_modal.style.opacity = "0"
+                setTimeout(() => {})
                 setTimeout(() => {
+                    bg_modal.style.opacity = "0"
                     bg_modal.style.display = "none"
                     elem.remove()
-                }, 500)
+                }, 200)
                 body.style.overflowY = "scroll"
             }
 

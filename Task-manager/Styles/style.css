@@ -36,9 +36,10 @@ main {
     font-size: 50px;
 }
 
-.logo img {
+.logo-img {
     width: 75px;
     height: 75px;
+    background: url(../Icons/notes_icon.png) no-repeat center;
 }
 
 .container {
@@ -105,7 +106,8 @@ main {
     width: 30px;
     height: 30px;
     border-radius: 100%;
-    background: url(../Icons/delete_icon.png) center;
+    background: url(../Icons/delete_icon.svg) no-repeat center;
+    filter: invert(100%);
     cursor: pointer;
 }
 
@@ -339,6 +341,7 @@ footer a {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-decoration: none;
+    pointer-events: none;
 }
 
 footer a:nth-child(3) {
