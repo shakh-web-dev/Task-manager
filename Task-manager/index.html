@@ -7,44 +7,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Styles/style.css">
     <link rel="stylesheet" href="./Styles/mediascreen.css">
-    <link rel="shortcut icon" href="./Icons/head_notes_icon.png">
-    <title>Task Manager</title>
+    <link rel="shortcut icon" href="./Icons/favicon.ico" type="images/x-icon">
+    <link rel="favicon" href="./Icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="Icons/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Icons/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Icons/favicons/favicon-16x16.png">
+    <link rel="manifest" href="Icons/favicons/site.webmanifest">
+    <link rel="mask-icon" href="Icons/favicons/safari-pinned-tab.svg" color="#d5b85b">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="theme-color" content="#00afff">
+    <title>Notes Manager</title>
 </head>
 
 <body>
     <main>
         <div class="logo">
-            <h1>Task Manager</h1>
-            <img src="./Icons/notes_icon.png" alt="logo">
+            <h1>Notes Manager</h1>
+            <div class="logo-img"></div>
         </div>
         <div class="container">
             <div class="todo chapter">
-                <h2 style="color: #ff0000;">Todo</h2>
-                <div class="unshift-here">
-                    <!-- <div class="todo-task">
-                        <h2>Заголовок</h2>
-                        <br>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, quae.</p>
-                        <div class="status">
-                            <div class="arrow-left">&lt;</div>
-                            <div class="arrow-right">&gt;</div>
-                        </div>
-                    </div> -->
-                </div>
+                <h2 style="background-color: #ff0000;">To do</h2>
+                <div class="unshift-here"></div>
             </div>
             <div class="inprogress chapter">
-                <h2 style="color: rgb(255, 255, 0);">Inprogress</h2>
+                <h2 style="background-color: #ffff00;">In progress</h2>
                 <div class="unshift-here"></div>
             </div>
             <div class="done chapter">
-                <h2 style="color: #00ff00;">Done</h2>
+                <h2 style="background-color: #00ff00;">Done</h2>
                 <div class="unshift-here"></div>
             </div>
         </div>
     </main>
     <div class="button-add">
         <p>New task</p>
-        <img src="./Icons/plus_icon.png" alt="plus">
+        <div class="button-add-img"></div>
     </div>
 
     <!-- Modal -->
@@ -61,10 +59,23 @@
             <button class="add">Add</button>
         </form>
     </div>
+    <div class="modal-delete">
+        <h1><span style="color: red;">Delete</span> this note?</h1>
+        <div class="choise">
+            <div style="background-color: red;">Yes</div>
+            <div style="background-color: green;">No</div>
+        </div>
+    </div>
+    <footer>
+        <p>Notes to do v1.4</p>
+        <a href="https://www.instagram.com/_diamond_.1603/">developer's instagram <img src="./Icons/instagram_icon.png"
+                alt="instagram" width="30px" height="30px"></a>
+        <a href="https://www.github.com/shakhriyor4ik/">developer's GitHub <img src="./Icons/github_icon.png"
+                alt="github" width="30px" height="30px"></a>
+    </footer>
 
-
-    <script src="./JS/script.js"></script>
-    <script src="./JS/modal.js"></script>
+    <script type="module" src="./JS/modal.js"></script>
+    <script type="module" src="./JS/script.js"></script>
 </body>
 
 </html>
