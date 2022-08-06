@@ -341,6 +341,7 @@ footer a {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-decoration: none;
+    pointer-events: none;
 }
 
 footer a:nth-child(3) {
