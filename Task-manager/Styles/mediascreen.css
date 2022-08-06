@@ -318,3 +318,324 @@
         height: 30px;
     }
 }
+
+@media screen and (max-width: 1225px) {
+    .logo {
+        width: fit-content;
+    }
+
+    .logo h1 {
+        font-size: 40px;
+    }
+
+    .logo img {
+        width: 60px;
+        height: 65px;
+    }
+
+    .chapter {
+        width: 350px;
+        height: 500px;
+    }
+
+    .chapter h2 {
+        font-size: 30px;
+    }
+
+    .todo-task {
+        width: 96%;
+    }
+
+    .arrow-left:active,
+    .arrow-right:active {
+        background-color: blue;
+        color: white;
+    }
+
+    .button-add {
+        width: 120px;
+        height: 60px;
+        font-size: 20px;
+        transition: .1s ease;
+    }
+
+    .button-add:hover {
+        box-shadow: none;
+    }
+
+    .button-add:active {
+        background-color: rgb(0, 106, 255);
+    }
+
+    /*Modal  */
+
+    .modal-background {
+        background: rgba(0, 0, 0, .7);
+    }
+
+    .modal-background span {
+        font-size: 90px;
+    }
+
+    .modal-window {
+        width: 450px;
+        height: 350px;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid gray;
+    }
+
+    .modal-window h2 {
+        font-size: 32px;
+    }
+
+    .modal-window input {
+        width: 80%;
+        font-size: 20px;
+    }
+
+    .modal-window input::placeholder {
+        font-size: 18px;
+    }
+
+    .modal-window textarea {
+        width: 80%;
+        height: 120px;
+        font-size: 19px;
+    }
+
+    .modal-window textarea::placeholder {
+        font-size: 18px;
+    }
+
+    .modal-window .add {
+        width: 35%;
+        height: 50px;
+        font-size: 19px;
+    }
+
+    .modal-window .add:active {
+        background-color: rgb(0, 210, 0);
+    }
+
+    .modal-window .add:hover {
+        box-shadow: none;
+    }
+}
+
+@media screen and (max-width: 1070px) {
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .chapter {
+        background-color: skyblue;
+    }
+
+    .chapter h2 {
+        border-radius: 10%;
+        padding: 5px;
+    }
+
+    .todo-task {
+        margin-bottom: 10px;
+        background-color: white;
+    }
+
+    .todo-task h3 {
+        font-size: 30px;
+    }
+
+    .todo-task p {
+        font-size: 23px;
+        color: rgb(180, 180, 180);
+    }
+
+    .status {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 170px;
+    }
+
+    .status .delete {
+        width: 40px;
+        height: 40px;
+    }
+
+    .arrow-left,
+    .arrow-right {
+        width: 60px;
+        height: 30px;
+        font-size: 25px;
+        border: none;
+        background-color: black;
+        color: white;
+    }
+
+    .arrow-left:active,
+    .arrow-right:active {
+        background-color: white;
+        color: black;
+    }
+
+
+    .button-add {
+        background-color: orangered;
+    }
+
+    body {
+        padding-bottom: 10px;
+    }
+
+    footer {
+        width: fit-content;
+        position: inherit;
+        padding: 10px;
+        border-radius: 15px;
+        background-color: rgb(123, 203, 234);
+        color: gray;
+        margin-top: 5px;
+        margin-left: 20px;
+        font-size: 20px;
+    }
+
+    footer a {
+        background: linear-gradient(45deg, red 33%, orangered 66%, orangered);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 21px;
+        width: 230px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .modal-delete {
+        width: 450px;
+        height: 250px;
+    }
+
+    /* Modal delete window */
+
+    .modal-delete .choise {
+        width: 300px;
+    }
+
+    .modal-delete .choise div {
+        width: 140px;
+        height: 70px;
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .logo {
+        width: fit-content;
+    }
+
+    .logo h1 {
+        font-size: 40px;
+    }
+
+    .button-add {
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+        padding: 5px;
+    }
+
+    .button-add p {
+        display: none;
+    }
+
+    .button-add-img {
+        width: 25px;
+        height: 25px;
+        filter: invert(100%);
+        background: url(../Icons/plus_icon.png) no-repeat center;
+    }
+
+    /* Modal */
+
+    .modal-background {
+        background: rgba(0, 0, 0, .7);
+    }
+
+    .modal-window {
+        width: 400px;
+        height: 325px;
+        background-color: black;
+    }
+
+    .modal-window h2 {
+        color: white;
+    }
+
+    .status {
+        width: 140px;
+    }
+
+    .status .delete {
+        width: 40px;
+        height: 40px;
+    }
+
+    .arrow-left,
+    .arrow-right {
+        width: 40px;
+        height: 45px;
+        transform: rotate(90deg);
+        font-size: 40px;
+    }
+
+    .modal-delete {
+        width: 380px;
+        height: 200px;
+    }
+
+    .modal-delete .choise {
+        width: 220px;
+    }
+
+    .modal-delete .choise div {
+        width: 100px;
+        height: 60px;
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .logo {
+        width: fit-content;
+    }
+
+    .logo h1 {
+        font-size: 40px;
+    }
+
+    .container {
+        gap: 20px;
+    }
+
+    .modal-window {
+        width: 350px;
+        height: 350px;
+    }
+
+    .modal-window textarea {
+        height: 150px;
+    }
+
+    .button-add {
+        right: 15px;
+        bottom: 15px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .button-add img {
+        width: 30px;
+        height: 30px;
+    }
+}
